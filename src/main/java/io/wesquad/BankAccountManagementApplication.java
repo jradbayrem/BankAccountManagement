@@ -1,4 +1,4 @@
-package io.wesquad.demo;
+package io.wesquad;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
