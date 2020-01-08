@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="administrator (generated)" id="1578480318068-1">
+        <createTable tableName="account">
+            <column name="account_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="balance" type="DECIMAL(19, 2)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480318068-2">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480318068-3">
+        <createTable tableName="transaction">
+            <column name="transaction_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="action_date" type="date"/>
+            <column name="amount" type="DECIMAL(19, 2)"/>
+            <column name="type" type="INT"/>
+            <column name="target_account_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480318068-4">
+        <addPrimaryKey columnNames="account_id" constraintName="PRIMARY" tableName="account"/>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480318068-5">
+        <addPrimaryKey columnNames="transaction_id" constraintName="PRIMARY" tableName="transaction"/>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480318068-6">
+        <createIndex indexName="FKmj1os7uxmi54buhn6tvro5i6j" tableName="transaction">
+            <column name="target_account_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480729750-1">
+        <createTable tableName="account">
+            <column name="account_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="balance" type="DECIMAL(19, 2)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480729750-2">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480729750-3">
+        <createTable tableName="transaction">
+            <column name="transaction_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="action_date" type="date"/>
+            <column name="amount" type="DECIMAL(19, 2)"/>
+            <column name="type" type="INT"/>
+            <column name="target_account_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480729750-4">
+        <addPrimaryKey columnNames="account_id" constraintName="PRIMARY" tableName="account"/>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480729750-5">
+        <addPrimaryKey columnNames="transaction_id" constraintName="PRIMARY" tableName="transaction"/>
+    </changeSet>
+    <changeSet author="administrator (generated)" id="1578480729750-6">
+        <createIndex indexName="FKmj1os7uxmi54buhn6tvro5i6j" tableName="transaction">
+            <column name="target_account_id"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>
